@@ -1,2 +1,2 @@
 # dev-vm-manager
-Manage azure developer VMs
+Manage developer VMs
