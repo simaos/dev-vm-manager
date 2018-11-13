@@ -1,13 +1,14 @@
+Import-Module AzureRm
 Connect-AzureRmAccount
-$cred = Get-Credential
+$credential = Get-Credential
+$name = "containerdev"
 New-AzureRmVm `
-    -ResourceGroupName "containerdev-rg" `
-    -Name "containerdev-vm" `
+    -ResourceGroupName "${name}-rg" `
+    -Name "${name}-vm" `
     -Location "WestEurope" `
-    -VirtualNetworkName "containerdev-vn" `
-    -SubnetName "containerdev-sn" `
-    -SecurityGroupName "containerdev-sg" `
-    -PublicIpAddressName "containerdev-ip" `
+    -VirtualNetworkName "${name}-vn" `
+    -SubnetName "${name}-sn" `
+    -SecurityGroupName "${name}-sg" `
+    -PublicIpAddressName "${name}-ip" `
     -ImageName "MicrosoftWindowsServer:WindowsServer:2016-Datacenter-with-Containers:latest" `
-    -Credential $cred `
-    -AsJob
+    -Credential $credential
